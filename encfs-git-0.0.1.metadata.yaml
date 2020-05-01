@@ -1,0 +1,59 @@
+path: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build/encfs-git-0.0.1.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd git-encfs && make install
+  env: []
+  prelude:
+  - apk update
+  - apk add make git
+  - git clone https://github.com/mudler/git-encfs
+  image: alpine
+  seed: alpine
+  package:
+    id: 0
+    name: encfs
+    version: 0.0.1
+    category: git
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    isset: false
+    provides: []
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    labels: {}
+  sourceassertion:
+  - package:
+      id: 0
+      name: encfs
+      version: 0.0.1
+      category: git
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      isset: false
+      provides: []
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      labels: {}
+    value: true
+    hash:
+      buildhash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      packagehash: aaf142708088eeacf505201c9381d826cffc677c3134c94f2ec74c52fb25e4d2
+  retrieve: []
+  outputpath: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build
+  unpack: false
+  includes: []
+checksums:
+  sha256: 7d90a4553088e14c6caac6c94d23e5d00819fd424e60a0e10000aff4713c33dd
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/git-encfs

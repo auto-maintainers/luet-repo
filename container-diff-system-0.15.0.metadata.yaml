@@ -1,0 +1,62 @@
+path: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build/container-diff-system-0.15.0.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd $GOPATH/src/github.com/GoogleContainerTools/container-diff && git checkout
+    -b build v0.15.0 && go build && mv container-diff /usr/bin/container-diff
+  env: []
+  prelude:
+  - apt-get update
+  - apt-get install git
+  - mkdir -p $GOPATH/src/github.com/GoogleContainerTools
+  - git clone https://github.com/GoogleContainerTools/container-diff $GOPATH/src/github.com/GoogleContainerTools/container-diff
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: container-diff
+    version: 0.15.0
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    isset: false
+    provides: []
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    labels: {}
+  sourceassertion:
+  - package:
+      id: 0
+      name: container-diff
+      version: 0.15.0
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      isset: false
+      provides: []
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      labels: {}
+    value: true
+    hash:
+      buildhash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      packagehash: a5f40481d4c4b70e24ef7344f7545008107d632e260e4879848af28b817c41b0
+  retrieve: []
+  outputpath: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/container-diff
+checksums:
+  sha256: 659ae2af2e5e4d39b03bda256ca63cda6e7b14d6ff3cd62bd094f1a3bfd773de
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/container-diff

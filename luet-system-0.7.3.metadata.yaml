@@ -1,0 +1,60 @@
+path: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build/luet-system-0.7.3.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd luet && git checkout "${PACKAGE_VERSION}" && make build && mv luet /usr/bin/luet
+  env: []
+  prelude:
+  - apt-get update
+  - apt-get install git
+  - git clone https://github.com/mudler/luet
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: luet
+    version: 0.7.3
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    isset: false
+    provides: []
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    labels: {}
+  sourceassertion:
+  - package:
+      id: 0
+      name: luet
+      version: 0.7.3
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      isset: false
+      provides: []
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      labels: {}
+    value: true
+    hash:
+      buildhash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      packagehash: 823e0ae2d5b921ac11733253daa17337a1f112e54123ecaaa9869a5239b583d4
+  retrieve: []
+  outputpath: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/luet
+checksums:
+  sha256: 5623329cf703e6bf5f6f30bdf3d1dc22cd0700f47d24349a307f7cc1a0d9c381
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/luet

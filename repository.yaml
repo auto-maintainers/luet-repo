@@ -1,0 +1,19 @@
+description: Luet official repository
+last_update: "1588343972"
+metapath: ""
+name: luet-official
+priority: 1
+repo_files:
+  meta:
+    compressiontype: none
+    filename: repository.meta.yaml.tar
+  tree:
+    checksums:
+      sha256: 1130ab83593d6fcbf7d015afe12ebb604baaacd9bdfbe2a06680ca66f51ebd93
+    compressiontype: gzip
+    filename: tree.tar.gz
+revision: 1
+treepath: ""
+type: http
+urls:
+- http://localhost:8000

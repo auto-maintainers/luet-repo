@@ -1,0 +1,64 @@
+path: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build/entities-system-0.3.package.tar.gz
+dependencies: []
+compilespec:
+  steps:
+  - cd entities && git checkout "${PACKAGE_VERSION}" && make build && mv entities
+    /usr/bin/entities
+  - cp -rfv /usr/bin/entities /usr/bin/luet-entities
+  env: []
+  prelude:
+  - apt-get update
+  - apt-get install git
+  - git clone https://github.com/mudler/entities
+  image: golang
+  seed: golang
+  package:
+    id: 0
+    name: entities
+    version: "0.3"
+    category: system
+    useflags: []
+    state: ""
+    packagerequires: []
+    packageconflicts: []
+    isset: false
+    provides: []
+    path: ""
+    description: ""
+    uri: []
+    license: ""
+    labels: {}
+  sourceassertion:
+  - package:
+      id: 0
+      name: entities
+      version: "0.3"
+      category: system
+      useflags: []
+      state: ""
+      packagerequires: []
+      packageconflicts: []
+      isset: false
+      provides: []
+      path: ""
+      description: ""
+      uri: []
+      license: ""
+      labels: {}
+    value: true
+    hash:
+      buildhash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      packagehash: ac54f869e9ca400688e5012e9412a287777ce593a288b8eddabcd6e586e6e3f6
+  retrieve: []
+  outputpath: /home/travis/gopath/src/github.com/Luet-lab/luet-repo/build
+  unpack: false
+  includes:
+  - /usr/bin/entities
+  - /usr/bin/luet-entities
+checksums:
+  sha256: 92b6350c594954b207cfb992ab3e585931ab6beb341f067ec2853ed53518f8a5
+sourceassertion: []
+compressiontype: gzip
+files:
+- usr/bin/entities
+- usr/bin/luet-entities
